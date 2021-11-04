@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link type="text/css" href="css/styles.css" rel="stylesheet" />
+    <title>Document</title>
+  </head>
+  <body>
+    <header class="box-shadow">
+      <div class="logo">
+        <a href="index.html"></a>
+      </div>
+      <div class="location">
+        <a href="#"></a>
+      </div>
+      <div class="call">
+        <a href="tel:555-123-4567"></a>
+      </div>
+      <div class="book">
+        <a id="calendarIcon" href="#"></a>
+      </div>
+      <div tabindex="1" class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="#">Air Conditioning</a></li>
+          <li><a href="#">Heating</a></li>
+          <li><a href="#">Plumbing</a></li>
+          <li><a href="#">Our Story</a></li>
+          <li><a href="#">Careers</a></li>
+          <li><a href="#">Contact</a></li>
+          <li><a href="#">FAQ</a></li>
+        </ul>
+      </nav>
+      <div class="invisibleButton"></div>
+    </header>
+    <main>
+      <section class="top">
+        <div>
+          <h2 tabindex="5">Tell Me More!</h2>
+          <div tabindex="6" class="TellMeMoreModal">
+            <div class="modalContent">
+              <button class="close">&#10006;</button>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi
+                asperiores similique culpa delectus ipsa incidunt laudantium
+                eaque est debitis doloribus doloremque vel quam quidem cumque
+                vero adipisci, mollitia earum repellat magnam maiores dicta?
+                Asperiores veritatis illum, eveniet, totam enim neque alias
+                porro debitis, omnis fuga iusto voluptatum fugiat odit unde.
+              </p>
+            </div>
+          </div>
+          <h2 id="BookNowTrigger">Book Now</h2>
+          <div id="BookNowModal">
+            <div class="modalContent">
+              <button id="closeBookNow" class="close">&#10006;</button>
+              <input type="number" placeholder="Enter Zipcode" />
+              <select>
+                <option selected disabled>Choose a Service</option>
+                <option>HVAC</option>
+                <option>Plumbing</option>
+                <option>Water Treatment</option>
+              </select>
+              <button>Submit</button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <script>
+      let BookNowTrigger = document.getElementById('BookNowTrigger');
+      let BookNowModal = document.getElementById('BookNowModal');
+      let closeBookNow = document.getElementById('closeBookNow');
+      let calendarIcon = document.getElementById('calendarIcon');
+      BookNowTrigger.addEventListener('click', showBookNowModal);
+      calendarIcon.addEventListener('click', showBookNowModal);
+      closeBookNow.addEventListener('click', closeBookNowModal);
+      function showBookNowModal() {
+        BookNowModal.classList.add('open');
+      }
+      function closeBookNowModal() {
+        BookNowModal.classList.remove('open');
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,421 @@
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;600;700&display=swap");
+html {
+  --darkBlue: #253855;
+  --almostWhite: #dbe5e8;
+  --blue1: #378daa;
+  --blue2: #319ecc;
+  --turquoise: #8fbabf;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+h1 {
+  font-size: 60px;
+}
+
+body {
+  font-family: 'Oswald', sans-serif;
+  width: 100%;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  color: var(--darkBlue);
+}
+
+.box-shadow {
+  -webkit-box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.3);
+          box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.3);
+  position: relative;
+}
+
+header {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[12];
+      grid-template-columns: repeat(12, 1fr);
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 10px;
+  position: relative;
+  z-index: 100;
+  background-color: var(--darkBlue);
+}
+
+header div {
+  width: 100%;
+}
+
+header div a {
+  width: 100%;
+  height: 50px;
+  display: inline-block;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  text-decoration: none;
+  color: var(--almostWhite);
+  background-image: url(../images/icons/home_White_24dp.svg);
+}
+
+header div.call a {
+  background-image: url(../images/icons/call_White_24dp.svg);
+}
+
+header div.location a {
+  background-image: url(../images/icons/location_on_White_24dp.svg);
+}
+
+header div.book a {
+  background-image: url(../images/icons/event_White_24dp.svg);
+}
+
+header div.hamburger {
+  position: absolute;
+  z-index: 101;
+  top: 20px;
+  right: 30px;
+  height: 40px;
+  width: 60px;
+  display: -ms-grid;
+  display: grid;
+  row-gap: 10px;
+}
+
+header div.hamburger span {
+  display: block;
+  position: relative;
+  width: 60px;
+  height: 5px;
+  top: 0;
+  background-color: #fff;
+  -webkit-transition: color 0.5s 0s, background-color 0.5s 0s, top 0.5s 0.25s, -webkit-transform 0.5s 0s;
+  transition: color 0.5s 0s, background-color 0.5s 0s, top 0.5s 0.25s, -webkit-transform 0.5s 0s;
+  transition: color 0.5s 0s, transform 0.5s 0s, background-color 0.5s 0s, top 0.5s 0.25s;
+  transition: color 0.5s 0s, transform 0.5s 0s, background-color 0.5s 0s, top 0.5s 0.25s, -webkit-transform 0.5s 0s;
+}
+
+header div.hamburger:focus span {
+  background-color: white;
+}
+
+header div.hamburger:focus span:nth-child(1) {
+  top: 17px;
+  -webkit-transform: rotateZ(45deg);
+          transform: rotateZ(45deg);
+  -webkit-transition: top 0.5s 0s, background-color 0.5s 0s, -webkit-transform 0.5s 0.25s;
+  transition: top 0.5s 0s, background-color 0.5s 0s, -webkit-transform 0.5s 0.25s;
+  transition: top 0.5s 0s, background-color 0.5s 0s, transform 0.5s 0.25s;
+  transition: top 0.5s 0s, background-color 0.5s 0s, transform 0.5s 0.25s, -webkit-transform 0.5s 0.25s;
+}
+
+header div.hamburger:focus span:nth-child(2) {
+  opacity: 0;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+header div.hamburger:focus span:nth-child(3) {
+  -webkit-transform: rotateZ(-45deg);
+          transform: rotateZ(-45deg);
+  top: -17px;
+  -webkit-transition: top 0.5s 0s, background-color 0.5s 0s, -webkit-transform 0.5s 0.25s;
+  transition: top 0.5s 0s, background-color 0.5s 0s, -webkit-transform 0.5s 0.25s;
+  transition: top 0.5s 0s, background-color 0.5s 0s, transform 0.5s 0.25s;
+  transition: top 0.5s 0s, background-color 0.5s 0s, transform 0.5s 0.25s, -webkit-transform 0.5s 0.25s;
+}
+
+header div.hamburger:focus + nav {
+  right: 0;
+  -webkit-transition: right 0.5s 0s;
+  transition: right 0.5s 0s;
+}
+
+header div.hamburger:focus ~ .invisibleButton {
+  display: block;
+}
+
+header nav {
+  background-color: #111111;
+  max-height: 100vh;
+  overflow: auto;
+  width: 40%;
+  position: absolute;
+  top: 0;
+  right: -100%;
+  -webkit-transition: right 0.5s 0.2s;
+  transition: right 0.5s 0.2s;
+}
+
+header nav ul {
+  list-style-type: none;
+  text-align: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 100px 0 0 0;
+  display: block;
+}
+
+header nav ul li {
+  font-size: 3em;
+}
+
+header nav ul li a {
+  text-decoration: none;
+  color: white;
+}
+
+header nav ul li a:hover {
+  background-color: #555;
+  -webkit-transition: all 1s;
+  transition: all 1s;
+  color: gold;
+}
+
+header .invisibleButton {
+  position: absolute;
+  z-index: 102;
+  top: 20px;
+  right: 30px;
+  height: 50px;
+  width: 60px;
+  display: none;
+}
+
+main section {
+  height: calc(100vh - 75px);
+  overflow: hidden;
+}
+
+main section.top {
+  min-height: calc(100vh - 75px);
+  position: relative;
+  display: -ms-grid;
+  display: grid;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-image: url(../images/minh-pham-OtXADkUh3-I-unsplash.jpg);
+  background-size: cover;
+}
+
+main section.top div {
+  width: 100%;
+}
+
+main section.top div h2 {
+  -webkit-animation: glow 3s infinite;
+          animation: glow 3s infinite;
+  margin: 10px;
+  text-align: center;
+  background-color: var(--darkBlue);
+  color: #fff;
+  font-size: 2em;
+  width: 220px;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+main section.top div h2:focus ~ div.TellMeMoreModal {
+  top: -75px;
+}
+
+main section.top div h2:focus ~ button.close {
+  display: block;
+}
+
+main section.top div div.TellMeMoreModal {
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(255, 255, 255, 0.5);
+  position: absolute;
+  top: 100%;
+  display: -ms-grid;
+  display: grid;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-transition: top 0.2s;
+  transition: top 0.2s;
+}
+
+main section.top div div.TellMeMoreModal:focus {
+  top: -75px;
+  display: -ms-grid;
+  display: grid;
+}
+
+main section.top div div.TellMeMoreModal .modalContent {
+  position: relative;
+  width: 600px;
+  height: 500px;
+  background-color: var(--darkBlue);
+}
+
+main section.top div div.TellMeMoreModal .modalContent p {
+  padding: 100px;
+  color: #fff;
+  font-size: 1.2em;
+}
+
+main section.top div div.TellMeMoreModal .modalContent button.close {
+  color: #fff;
+  font-size: 2em;
+  background: transparent;
+  border: none;
+  position: absolute;
+  top: 10px;
+  right: 10%;
+}
+
+main section.top div #BookNowModal {
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(255, 255, 255, 0.5);
+  position: absolute;
+  top: 100%;
+  display: -ms-grid;
+  display: grid;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-transition: top 0.2s;
+  transition: top 0.2s;
+}
+
+main section.top div #BookNowModal.open {
+  top: -75px;
+}
+
+main section.top div #BookNowModal .modalContent {
+  padding: 60px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  position: relative;
+  width: 400px;
+  height: 300px;
+  background-color: var(--darkBlue);
+}
+
+main section.top div #BookNowModal .modalContent input,
+main section.top div #BookNowModal .modalContent select,
+main section.top div #BookNowModal .modalContent button {
+  font-size: 1.5em;
+}
+
+main section.top div #BookNowModal .modalContent button.close {
+  color: #fff;
+  font-size: 2em;
+  background: transparent;
+  border: none;
+  position: absolute;
+  top: 10px;
+  right: 10%;
+}
+
+@media screen and (max-width: 1000px) {
+  header {
+    background-color: rgba(255, 255, 255, 0.5);
+    -ms-grid-columns: (1fr)[6];
+        grid-template-columns: repeat(6, 1fr);
+  }
+  header.box-shadow {
+    -webkit-box-shadow: none;
+            box-shadow: none;
+  }
+  header nav {
+    width: 80%;
+    max-height: 100vh;
+    overflow: auto;
+  }
+  header div.hamburger {
+    display: -ms-grid;
+    display: grid;
+  }
+  header div.hamburger span {
+    background-color: #000;
+  }
+  header div a {
+    background-image: url(../images/icons/home_black_24dp.svg);
+  }
+  header div.call a {
+    background-image: url(../images/icons/call_black_24dp.svg);
+  }
+  header div.location a {
+    background-image: url(../images/icons/location_on_black_24dp.svg);
+  }
+  header div.book a {
+    background-image: url(../images/icons/event_black_24dp.svg);
+  }
+  main section.top div.TellMeMoreModal .modalContent {
+    width: 100%;
+  }
+  main section.top div.TellMeMoreModal .modalContent p {
+    padding: 100px 20px 20px 20px;
+  }
+  main section.top div#BookNowModal .modalContent {
+    padding: 60px 20px;
+    width: 100vw;
+  }
+}
+
+@-webkit-keyframes glow {
+  0% {
+    background-color: var(--darkBlue);
+    -webkit-box-shadow: 0 0 0px #00aeff;
+            box-shadow: 0 0 0px #00aeff;
+  }
+  50% {
+    background-color: #c3e1fa;
+    -webkit-box-shadow: 0 0 20px #00aeff;
+            box-shadow: 0 0 20px #00aeff;
+  }
+  100% {
+    background-color: var(--darkBlue);
+    -webkit-box-shadow: 0 0 0px #00aeff;
+            box-shadow: 0 0 0px #00aeff;
+  }
+}
+
+@keyframes glow {
+  0% {
+    background-color: var(--darkBlue);
+    -webkit-box-shadow: 0 0 0px #00aeff;
+            box-shadow: 0 0 0px #00aeff;
+  }
+  50% {
+    background-color: #c3e1fa;
+    -webkit-box-shadow: 0 0 20px #00aeff;
+            box-shadow: 0 0 20px #00aeff;
+  }
+  100% {
+    background-color: var(--darkBlue);
+    -webkit-box-shadow: 0 0 0px #00aeff;
+            box-shadow: 0 0 0px #00aeff;
+  }
+}
+/*# sourceMappingURL=styles.css.map */
